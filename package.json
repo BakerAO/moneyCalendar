@@ -4,7 +4,7 @@
   "description": "A Calendar app to organize your money.",
   "main": "index.js",
   "scripts": {
-    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --host '192.168.0.50' --port 80"
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
   },
   "repository": {
     "type": "git",
@@ -18,8 +18,10 @@
   "homepage": "https://github.com/bakerao/moneyCalendar#readme",
   "dependencies": {
     "axios": "^0.18.0",
+    "bootstrap": "^4.1.1",
     "jquery": "^3.3.1",
     "lodash": "^4.17.10",
+    "popper.js": "^1.14.3",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",

@@ -1,21 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import axios from 'axios';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware } from 'redux';
+import promise from 'redux-promise';
 
-class moneyCalendar extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+import reducers from './reducers';
+import Index from './components/index';
 
-    render() {
-        return(
-            <div>Hello DMagazine</div>
-        );
-    }
-}
+const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 
 ReactDOM.render(
-    <moneyCalendar />
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <BrowserRouter>
+            <div>
+                <Switch>
+                    <Route path='/' component={Index} />
+                </Switch>
+            </div>
+        </BrowserRouter>
+    </Provider>
     , document.querySelector('.container')
 );
-
